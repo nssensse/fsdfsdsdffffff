@@ -13,9 +13,9 @@ $("#update_user").submit(function(event){
         data[n['name']] = n['value']
     })
 
-
+    const apiUrl=process.env.API_URL;
     var request = {
-        "url" : `https://nsnsnsnsfjds-icjm.vercel.app/api/users/${data.id}`,
+        "url" : `${apiUrl}api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -30,9 +30,9 @@ if(window.location.pathname != "/"){
     $ondelete = $(".table2 tbody td a.delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
-
+        const apiUrl=process.env.API_URL;
         var request = {
-            "url" : `https://nsnsnsnsfjds-icjm.vercel.app/api/users/${id}`,
+            "url" : `${apiUrl}/api/users/${id}`,
             "method" : "DELETE"
         }
 
