@@ -3,7 +3,7 @@ const axios = require('axios');
 
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    axios.get('https://nsnsnsnsfjds-icjm.vercel.app/api/users')
         .then(function(response){
             res.render('index', { users : response.data });
         })
@@ -15,7 +15,7 @@ exports.homeRoutes = (req, res) => {
 }
 
 exports.add_user = (req, res) =>{
-    axios.get('http://localhost:3000/api/users')
+    axios.get('https://nsnsnsnsfjds-icjm.vercel.app/api/users')
         .then(function(response){
             res.render('add_user', { users : response.data });
         })
@@ -25,7 +25,7 @@ exports.add_user = (req, res) =>{
 }
 
 exports.update_user = (req, res) =>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get('https://nsnsnsnsfjds-icjm.vercel.app/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("update_user", { user : userdata.data})
         })
